@@ -29,7 +29,7 @@ app.get("/ragas/:id", (req, res) => {
 })
 
 app.post("/ragas", (req, res) => {
-    return ragaHandler.createNewRagaEntry(req, res)
+    return ragaHandler.upsertRagaEntry(req, res)
 })
 
 app.get("/compositions/list", (req, res) => {

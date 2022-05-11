@@ -48,9 +48,6 @@ class Compositions extends Component {
                                     <tr>
                                         <td>{item.raga}</td>
                                         <td>{item.type}</td>
-                                        <td>
-                                            <iframe src={"https:/storage.cloud.google.com/performance-bucket/sangam2019.mp4"}/>
-                                        </td>
                                         <td><Button onClick={() => this.setState()}>View</Button></td>
                                     </tr>
                                 )

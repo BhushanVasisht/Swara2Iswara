@@ -10,6 +10,6 @@ exports.getOneRaga = (req, res) => {
 }
 
 
-exports.createNewRagaEntry = (req, res) => {
+exports.upsertRagaEntry = (req, res) => {
 
 }
