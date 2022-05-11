@@ -1,8 +1,7 @@
 import axios from  'axios';
-import {Container} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 import {backend_base} from "../uri";
-
-const {Component} = require("react");
+import {Component} from "react";
 
 
 class Performance extends Component {
@@ -32,6 +31,11 @@ class Performance extends Component {
                             return (
                                 <div key={item.id}>
                                     <p>item.name</p>
+                                    <Card
+                                        id={item.id}
+                                        imgUrl={item.src}
+                                        shouldScale={true}
+                                    />
                                 </div>
                             )
                         })

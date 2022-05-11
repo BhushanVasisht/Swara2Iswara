@@ -4,7 +4,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const ragaHandler = require('./ragas/ragaHandler')
 const compositionHandler = require('./compositions/compositionHandler')
-
+const performanceHandler = require('./performances/performanceHandler')
 
 // initial config
 dotenv.config()
@@ -42,6 +42,14 @@ app.get("/compositions/:id", (req, res) => {
 
 app.post("/compositions", (req, res) => {
     return compositionHandler.createNewCompositionEntry(req, res)
+})
+
+app.get("/performances/list", (req, res) => {
+    return performanceHandler.listAllPerformances(req, res)
+})
+
+app.post("/performances", (req, res) => {
+    return performanceHandler.createNewPerformanceEntry(req, res)
 })
 
 
