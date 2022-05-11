@@ -2,6 +2,9 @@ const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const ragaHandler = require('./ragas/ragaHandler')
+const compositionHandler = require('./compositions/compositionHandler')
+
 
 // initial config
 dotenv.config()
@@ -15,6 +18,30 @@ app.use(bodyParser.json())
 // routes
 app.get("/test", (req, res) => {
     res.send("hello");
+})
+
+app.get("/ragas/list", (req, res) => {
+    return ragaHandler.listAllRagas(req, res)
+})
+
+app.get("/ragas/:id", (req, res) => {
+    return ragaHandler.getOneRaga(req, res);
+})
+
+app.post("/ragas", (req, res) => {
+    return ragaHandler.createNewRagaEntry(req, res)
+})
+
+app.get("/compositions/list", (req, res) => {
+    return compositionHandler.listAllCompositions(req, res)
+})
+
+app.get("/compositions/:id", (req, res) => {
+    return compositionHandler.getOneComposition(req, res);
+})
+
+app.post("/compositions", (req, res) => {
+    return compositionHandler.createNewCompositionEntry(req, res)
 })
 
 
