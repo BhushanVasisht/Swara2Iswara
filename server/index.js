@@ -41,7 +41,7 @@ app.get("/compositions/:id", (req, res) => {
 })
 
 app.post("/compositions", (req, res) => {
-    return compositionHandler.createNewCompositionEntry(req, res)
+    return compositionHandler.upsertCompositionEntry(req, res)
 })
 
 app.get("/performances/list", (req, res) => {
