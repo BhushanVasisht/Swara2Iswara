@@ -3,7 +3,7 @@ const {Firestore} = require('@google-cloud/firestore');
 // Create a new client
 const firestore = new Firestore({
     projectId: 'fine-balm-349904',
-    keyFilename: './swara2Iswara_key.json'
+    keyFilename: '../../fine-balm-349904-0128cf76bf7f.json'
 });
 
 
