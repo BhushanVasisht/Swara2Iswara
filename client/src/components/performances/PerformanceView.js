@@ -1,6 +1,6 @@
 import {Button, Card} from "react-bootstrap";
 import {Component} from "react";
-import  { Navigate } from "react-router-dom";
+import Performance from "./Performances";
 
 class PerformanceView extends Component {
 
@@ -8,10 +8,9 @@ class PerformanceView extends Component {
         goBack: false
     }
 
-
     render() {
         if(this.state.goBack) {
-            return <Navigate to='/performances'/>;
+            return <Performance />
         }
         else {
             const item = this.props.event

@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {Button, Container, Table} from "react-bootstrap";
 import Home from "../../pages/Home";
 import axios from "axios";
-import CompositionView from "./CompositionView";
+import { Navigate } from "react-router-dom";
 
 
 class Compositions extends Component {
@@ -26,7 +26,7 @@ class Compositions extends Component {
 
     render() {
         return this.state.select ?
-            <CompositionView />
+            <Navigate to='/compositions'/>
             :
             this.state.returnFlag ?
                 <Home />
