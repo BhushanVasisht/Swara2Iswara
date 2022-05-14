@@ -38,10 +38,7 @@ class PerformanceView extends Component {
                 </Card>
             );
         }
-
     }
-
-
 }
 
 export default PerformanceView;

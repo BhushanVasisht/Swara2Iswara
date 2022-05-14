@@ -1,8 +1,8 @@
 const axios = require("axios");
-
+const storage_service = "http://localhost:5001"
 
 exports.listAllRagas = async (req, res) => {
-    let rs = await axios.get(storage_service + "/performances")
+    let rs = await axios.get(storage_service + "/ragas")
 
     if (rs.status === 200) {
 

@@ -3,9 +3,9 @@ import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Login from "./pages/Login";
 import Performances from "./components/performances/Performances";
 import Compositions from "./components/compositions/Compositions";
+import RagaView from "./components/ragas/RagaView";
 
 function App() {
 
@@ -44,7 +44,7 @@ function App() {
                 <Route exact path="/about" element={<About />} />
                 <Route exact path="/compositions" element={<Compositions/>} />
                 <Route exact path="/performances" element={<Performances />} />
-                <Route exact path="/login" element={<Login />} />
+                <Route exact path="/ragas" element={<RagaView />} />
             </Routes>
         </div>
     );

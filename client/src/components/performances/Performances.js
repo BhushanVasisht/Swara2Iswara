@@ -17,10 +17,7 @@ class Performance extends Component {
 
     componentDidMount = async () => {
 
-        await axios({
-            method: 'GET',
-            url: '/performances/list'
-        }).then(res => {
+        await axios.get('/performances/list').then(res => {
             this.setState({events : res.data.data})
         })
             .catch(err => {
