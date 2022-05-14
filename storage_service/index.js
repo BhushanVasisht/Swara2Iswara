@@ -14,7 +14,11 @@ app.use(bodyParser.json())
 
 
 app.get("/ragas", (req, res) => {
-    return aggServer.listAllRagas(req, res);
+    return aggServer.getAllRagas(req, res);
+})
+
+app.get("/performances", (req, res) => {
+    return aggServer.getAllPerformances(req, res);
 })
 
 

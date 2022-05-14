@@ -1,8 +1,7 @@
 import {Component} from 'react';
 import {Button, Container, Table} from "react-bootstrap";
-import Home from "../Home";
+import Home from "../../pages/Home";
 import axios from "axios";
-import {backend_base} from "../../uri";
 import CompositionView from "./CompositionView";
 
 
@@ -16,7 +15,7 @@ class Compositions extends Component {
 
     componentDidMount() {
 
-        axios.get(backend_base + "/compositions")
+        axios.get("/compositions")
             .then(res => {
                 this.setState({items : res.data})
             })

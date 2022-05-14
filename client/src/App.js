@@ -4,8 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
-import Performance from "./components/PerformanceView";
-import Compositions from "./pages/compositions/Compositions";
+import Performances from "./components/performances/Performances";
+import Compositions from "./components/compositions/Compositions";
 
 function App() {
 
@@ -43,7 +43,7 @@ function App() {
                 <Route exact path="" element={<Home />} />
                 <Route exact path="/about" element={<About />} />
                 <Route exact path="/compositions" element={<Compositions/>} />
-                <Route exact path="/performances" element={<Performance />} />
+                <Route exact path="/performances" element={<Performances />} />
                 <Route exact path="/login" element={<Login />} />
             </Routes>
         </div>
