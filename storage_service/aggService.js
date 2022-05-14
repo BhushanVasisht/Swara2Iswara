@@ -6,15 +6,16 @@ const firestore = new Firestore({
     keyFilename: '../../fine-balm-349904-0128cf76bf7f.json'
 });
 
-
 // Use caching for lesser latency and higher throughput
 let janakaCache = []
 let janyaCache = []
+let performanceCache = []
 
 const janakaH = firestore.collection('janaka-ragas')
 const janyaH = firestore.collection('janya-ragas')
+const performanceH = firestore.collection('performances')
 
-const janakaObserver = janakaH.onSnapshot(async docSnapshot => {
+janakaH.onSnapshot(async docSnapshot => {
     console.log('Received janaka snapshot');
 
     let janakalocal = []
@@ -34,11 +35,28 @@ const janyaObserver = janyaH.onSnapshot(async docSnapshot => {
     console.log(`Encountered error: ${err}`);
 });
 
-exports.listAllRagas = async (req, res) => {
+const performanceObserver = performanceH.onSnapshot(async docSnapshot => {
+    console.log('Received performance snapshot');
+
+    let performanceLocal = []
+    await docSnapshot.forEach(d => performanceLocal.push(d.data()))
+    performanceCache = performanceLocal
+}, err => {
+    console.log(`Encountered error: ${err}`);
+});
+
+
+exports.getAllRagas = async (req, res) => {
 
     return res.json({
-        "janaka" : janakaCache,
-        "janya" : janyaCache
+        janaka : janakaCache,
+        janya : janyaCache
+    })
+}
+
+exports.getAllPerformances = async (req, res) => {
+    return res.json({
+        events : performanceCache
     })
 }
 
