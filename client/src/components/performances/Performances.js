@@ -17,7 +17,7 @@ class Performance extends Component {
             method: 'GET',
             url: '/performances/list'
         }).then(res => {
-            this.setState({events : res.data.data.events})
+            this.setState({events : res.data.data})
         })
             .catch(err => {
                 console.log("Cannot contact backend")

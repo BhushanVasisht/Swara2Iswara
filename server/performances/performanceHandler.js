@@ -5,9 +5,9 @@ exports.listAllPerformances = async (req, res) => {
     let rs = await axios.get(storage_service + "/performances")
 
     if (rs.status === 200) {
-        
+
         return res.json({
-            data: rs.data
+            data: rs.data['events']
         })
     }
     else {
