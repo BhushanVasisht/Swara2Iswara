@@ -43,7 +43,7 @@ class Performance extends Component {
                                             count === 1 ?
                                                 <Card.Header>Featured</Card.Header>
                                                 :
-                                                <Card.Header/>
+                                                <div/>
                                         }
                                         <Card.Body>
                                             <Card.Title>{item['name']}</Card.Title>

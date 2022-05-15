@@ -25,7 +25,7 @@ class RagaView extends Component {
         console.log(this.state)
         return (
             <Container className={"text-center"}>
-                <h1><Badge bg="secondary">Janaka Ragas</Badge></h1>
+                <h1><Badge bg="warning">Janaka Ragas</Badge></h1>
                 <Table bordered style={{ height: '250px'}}>
                     <thead>
                         <tr>
@@ -55,7 +55,7 @@ class RagaView extends Component {
                     </tbody>
                 </Table>
 
-                <h1><Badge bg="secondary">Janya Ragas</Badge></h1>
+                <h1><Badge bg="warning">Janya Ragas</Badge></h1>
                 <Table bordered style={{ height: '250px'}}>
                     <thead>
                         <tr>
